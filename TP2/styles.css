@@ -1,0 +1,227 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #b4ceeb;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+/* Estilos base del contenedor */
+#canvas-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 960px;
+  height: 500px;
+  background-color: #1a1a1a; /* FONDO OSCURO INTEGRADO CON EL CANVAS */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Canvas estilizado */
+#canvas-container canvas {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #000000;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: floatIn 1.2s ease-out forwards;
+}
+
+/* Animación de entrada */
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    .descripcion p {
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .integrantes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .persona {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .persona img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .servicios {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .pastilla {
+      background: #dadada;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 150px;
+      transition: transform 0.3s ease;
+    }
+
+    .pastilla p{
+      color: #333;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .pastilla:hover p{
+      font-weight: bold;
+    }
+
+    .pastilla:hover {
+      transform: translateY(-5px);
+      background: #b4ceeb;
+    }
+
+    .pastilla img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #1f1f1f;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 2px solid #333;
+    }
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #f5f5f5;
+}
+
+/* Tooltip personalizado */
+.persona {
+  flex: 1 1 200px;  /* Mínimo 200px, crecen si hay espacio */
+  max-width: 250px;
+  text-align: center;
+}
+
+.persona::after {
+  content: attr(data-role);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.persona:hover::after {
+  opacity: 1;
+}
+
+.titulo-servicios {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  text-align: start;
+}
+
+.pastillas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.titulo-integrantes {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+.integrantes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.persona {
+  flex: 1 1 30%;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+
+@media (max-width: 400px) {
+  .integrantes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .persona {
+    width: 90%;
+  }
+}
